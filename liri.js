@@ -4,27 +4,29 @@ require("dotenv").config();
 //create the variables for each ones that will need
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify); // access spotify key info
+var spotify = new Spotify(keys.spotify); 
 var moment = require("moment");
 var fs = require("fs");
 var axios = require("axios");
-let command = process.argv[2];
+var command = process.argv[2];
+var query = process.argv.slice(3).join("");
+
 
 
 function switchCase() {
-
+// console.log('switching case');
   switch (command) {
 
     case 'concert-this':
-      getConcert(artist);                   
+      getConcert(query);                   
       break;                          
 
     case 'spotify-this-song':
-      getSong(songName);
+      getSong(query);
       break;
 
     case 'movie-this':
-      getMovie(movieName);
+      getMovie(query);
       break;
 
     case 'do-what-it-says':
@@ -40,36 +42,34 @@ function getConcert(artist){
           // console.log(queryUrl);
       axios.get(queryUrl)
         .then(function (response){
-        if(response.data.length <= 10){
-            for(var i=2; i<response.data; i++){
+        if(response.data.length > 0){
+            for(var i=0; i<response.data.length; i++){
+              if (response.data[i]) {
             console.log(response.data[i].venue.name);
             console.log(response.data[i].venue.region);
             var concertDate = moment(response.data[i]).format("MM/DD/YYYY");
             console.log("Date of the Event :" + concertDate);
           };
-
+          // create the details for the new file log.txt
+          var addLog = [
+            "name :" + response.data[i].venue.name ? response.data[i].venue.name : '',
+            "location: " + response.data[i].venue.region ? response.data[i].venue.region : '',
+            "date: " + moment(response.data[i]).format("MM/DD/YYYY")
+          ];
+        
+            fs.appendFileSync("log.txt", JSON.stringify(addLog, null, 2), function(err) {
+              if (err) {
+              console.log(err);
+              return;
+              } else {  
+              console.log("concert-this added!");
+              }
+            });
+            }
         }else{
           console.log("Band in Town Artist not found!"); 
         }
     });
-    // create the details for the new file log.txt
-    var addLog = {
-      name: response.data[i].venue.name,
-      location: response.data[i].venue.region,
-      date: momentmoment(response.data[i]).format("MM/DD/YYYY")
-  };
-  
-    fs.appendFile("log.txt", JSON.stringify(addLog, null, 2), function(err) {
-      if (err) {
-      console.log(err);
-      return;
-      } else {  
-      console.log("concert-this added!");
-      }
-    });
-  //   .catch(function (error) {
-  //     console.log(error);
-  // });
 
 }
 // spotify-this-song
@@ -86,14 +86,14 @@ function getSong(songName){
       }
     
  // create the details for the new file log.txt
-      var addLog = {
-        artist: data.tracks.items[0].artists[0].name,
-        songName: data.tracks.items[0].name,
-        preview: data.tracks.items[0].album.external_urls.spotify,
-        album: data.tracks.items[0].album.name
-      };
+      var addLog = [
+        "Artist:" + data.tracks.items[0].artists[0].name,
+        "sngName:" + data.tracks.items[0].name,
+        "preview:" + data.tracks.items[0].album.external_urls.spotify,
+        "album: " +  data.tracks.items[0].album.name
+      ];
 
-      fs.appendFile("log.txt", JSON.stringify(addLog, null, 2), function(err) {
+      fs.appendFileSync("log.txt", JSON.stringify(addLog, null, 2), function(err) {
          if (err) {
             console.log(err);
             // Log the error and send a message to the user here
@@ -102,33 +102,42 @@ function getSong(songName){
             console.log("spotify-this-song added!");
           }
         });
+})
 }
-// movie-this
 function getMovie(movieName){
-  axios.get("http://www.omdbapi.com/?t= + movieName + =&plot=short&apikey=trilogy")
-  .then(function(response) {
+  if(movieName === undefined){
+    movieName = "Mr. Nobody";
+  }
+  var URL = "http://www.omdbapi.com/?t="+ movieName + "=&plot=short&apikey=trilogy";
+  axios.get(URL).then(function(response) {
+    console.log(response.data);
+
+    //{ Response: 'False', Error: 'Movie not found!' }
+    //check for response false
+
+    //only output below if response is not false
     // Then we print out the imdbRating
     console.log("Title: " + response.data.Title);
     console.log("Year: " + response.data.Year);
     console.log("IMDB Rating: " + response.data.imdbRating);
-    console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value); 
+    console.log("Rotten Tomatoes Rating: " + response.data.Ratings.length >0 ? response.data.Ratings[1].Value : 'NA'); 
     console.log("Country: " + response.data.Country);
     console.log("Language: " + response.data.Language);
     console.log("Plot: " + response.data.Plot);
     console.log("Actors: " + response.data.Actors);
     console.log("\n---------------------------------------------------\n");
-  });
+  
   // create the details for the new file log.txt
-        var addLog = {
-                title: response.data.Title,
-                year: response.data.Year,
-                imdbRating: response.data.imdbRating,
-                rottenTomatoesRating: response.data.Ratings[1].Value,
-                countryProduced: response.data.Country,
-                language: response.data.Language,
-                plot: response.data.Plot,
-                actors: response.data.Actors,
-                };
+        var addLog = [
+                "Title: " + response.data.Title,
+                "Year: " + response.data.Year,
+                "imdbRating: " + response.data.imdbRating,
+                "rottenTomatoesRating: " + response.data.Ratings.length > 0 ? response.data.Ratings[1].Value : 'NA',
+                "countryProduced: " + response.data.Country,
+                "Language: " + response.data.Language,
+                "plot :" + response.data.Plot,
+                "actors: " + response.data.Actors,
+        ];
         fs.appendFileSync("log.txt", JSON.stringify(addLog, null, 2), function (err) {
             if (err) {
                 console.log(err);
@@ -136,16 +145,11 @@ function getMovie(movieName){
           console.log("movie-this added!.");
          }
       });
+    });
     }
-        .catch(function (error) {
-        console.log(error);
-      });
-
-}
-
-// do-what-it-says
+    // do-what-it-says
 function getIt(){
-  fs.readFile('random.txt', "utf8", function(error, data){
+  fs.readFileSync('random.txt', "utf8", function(error, data){
 
     if (error) {
         return display(error);
@@ -156,14 +160,8 @@ function getIt(){
         
       var songcheck = dataArr[1].trim().slice(1, -1);
       spotifySong(songcheck);
-    } 
-   
+    }    
     });
-
 }
 switchCase();
-
-
-
-// set any environment variables with the dotenv package
 
