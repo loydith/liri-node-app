@@ -6,7 +6,7 @@ LIRI is a Language Interpretation and Recognition Interface, a command line node
 
 LIRI can search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
-#Instructions
+# Instructions
 ------------
 
 1. Navigate to the root of my project and run npm init -y — this will initialize a package.json file for my project. The package.json file is required for installing third party npm packages and saving their version numbers. 
@@ -104,9 +104,17 @@ Add the code required to import the keys.js file and store it in a variable.
 	
 	10.1 fs.appendFileSync ==> ("log.txt")
 	
-	
-	#Screen-shot ==> concert-this
+# run ==> concert-this
+
 	<img width="1680" alt="Screen Shot - concert-this" src="https://user-images.githubusercontent.com/47442758/57576840-5c293480-742f-11e9-8526-ecbdd623947b.png">
+	
+# run ==> spotify-this-song
+
+<img width="1680" alt="Screen Shot - spotify-this-song" src="https://user-images.githubusercontent.com/47442758/57576877-38b2b980-7430-11e9-934e-42a4e8b0a84c.png">
+
+# run ==> movie-this
+
+<img width="1680" alt="Screen Shot - Movie-this" src="https://user-images.githubusercontent.com/47442758/57576875-2d5f8e00-7430-11e9-803f-e4778836576d.png">
 
 
 
