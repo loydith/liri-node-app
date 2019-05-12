@@ -69,9 +69,9 @@ Add the code required to import the keys.js file and store it in a variable.
 7. Node-Spotify-API ==> Function getArtist(artist)
 
 	7.1 Axios ==> "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
-		[Name of the venue,
-			Venue location,
-			Date of the Event (use moment to format this as "MM/DD/YYYY")]
+		[ * Name of the venue,
+			* Venue location,
+			* Date of the Event (use moment to format this as "MM/DD/YYYY")]
 
 	7.2 www.moment.com ==> moment().format("MM/DD/YYYY")
 	7.3 fs.appendFileSync ==> log.txt
