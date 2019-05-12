@@ -112,8 +112,11 @@ Add the code required to import the keys.js file and store it in a variable.
 
 # run ==> movie-this
 
-<img width="1680" alt="Screen Shot - Movie-this" src="https://user-images.githubusercontent.com/47442758/57576875-2d5f8e00-7430-11e9-803f-e4778836576d.png">
+<img width="1680" alt="Screeshot-movie-this" src="https://user-images.githubusercontent.com/47442758/57577410-62251280-743b-11e9-959d-368c6104c897.png">
 
+# run ==> log.txt
+
+<img width="1680" alt="Screenshot - file-log" src="https://user-images.githubusercontent.com/47442758/57577414-6bae7a80-743b-11e9-9988-aa4021f46fd3.png">
 
 
 
