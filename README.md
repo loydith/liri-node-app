@@ -106,7 +106,7 @@ Add the code required to import the keys.js file and store it in a variable.
 	
 # run ==> concert-this
 
-	<img width="1680" alt="Screen Shot - concert-this" src="https://user-images.githubusercontent.com/47442758/57576840-5c293480-742f-11e9-8526-ecbdd623947b.png">
+<img width="1680" alt="Screen Shot - concert-this" src="https://user-images.githubusercontent.com/47442758/57576840-5c293480-742f-11e9-8526-ecbdd623947b.png">
 	
 # run ==> spotify-this-song
 
