@@ -1,12 +1,12 @@
 # liri-node-app
 
-##WELCOME TO MY LIRI Node App!
+#WELCOME TO MY LIRI Node App!
 
 LIRI is a Language Interpretation and Recognition Interface, a command line node app.
 
 LIRI can search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
-##Instructions
+#Instructions
 ------------
 
 1. Navigate to the root of my project and run npm init -y — this will initialize a package.json file for my project. The package.json file is required for installing third party npm packages and saving their version numbers. 
@@ -66,29 +66,29 @@ Add the code required to import the keys.js file and store it in a variable.
 
 	Function that made for this App:
 
-1. Node-Spotify-API ==> Function getArtist(artist)
+7. Node-Spotify-API ==> Function getArtist(artist)
 
-	1.1 Axios ==> "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+	7.1 Axios ==> "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 		[Name of the venue,
 			Venue location,
 			Date of the Event (use moment to format this as "MM/DD/YYYY")]
 
-	1.2 www.moment.com ==> moment().format("MM/DD/YYYY")
-	1.3 fs.appendFileSync ==> log.txt
+	7.2 www.moment.com ==> moment().format("MM/DD/YYYY")
+	7.3 fs.appendFileSync ==> log.txt
 
-2. Spotify-this-song ==> Function getSong(songName)
+8. Spotify-this-song ==> Function getSong(songName)
 	
-	2.1 spotify.search
+	8.1 spotify.search
 		[Artist(s),
 			The song's name,
 			A preview link of the song from Spotify,
 			The album that the song is from]
 	
-	2.2 fs.appendFileSync ==> ("log.txt")
+	8.2 fs.appendFileSync ==> ("log.txt")
 
-3. Movie-this ==> function getMovie(movieName){
+9. Movie-this ==> function getMovie(movieName){
    
- 	3.1 URL = "http://www.omdbapi.com/?t="+ movieName + "=&plot=short&apikey=trilogy";
+ 	9.1 URL = "http://www.omdbapi.com/?t="+ movieName + "=&plot=short&apikey=trilogy";
 		[  * Title of the movie.
    		* Year the movie came out.
   		 * IMDB Rating of the movie.
@@ -98,11 +98,16 @@ Add the code required to import the keys.js file and store it in a variable.
    		* Plot of the movie.
    		* Actors in the movie.]
 
-	3.2 fs.appendFileSync ==> log.txt
+	9.2 fs.appendFileSync ==> log.txt
 
-4. do-what-it-says == > Function getIt()
+10. do-what-it-says == > Function getIt()
 	
-	4.1 fs.appendFileSync ==> ("log.txt")
+	10.1 fs.appendFileSync ==> ("log.txt")
+	
+	
+	#Screen-shot ==> concert-this
+	<img width="1680" alt="Screen Shot - concert-this" src="https://user-images.githubusercontent.com/47442758/57576840-5c293480-742f-11e9-8526-ecbdd623947b.png">
+
 
 
 
