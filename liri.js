@@ -9,12 +9,12 @@ var moment = require("moment");
 var fs = require("fs");
 var axios = require("axios");
 var command = process.argv[2];
-var query = process.argv.slice(3).join("");
+var query = process.argv.slice(3).join(""); //.slice(3) for title like " Star wars"
 
 
 
 function switchCase() {
-// console.log('switching case');
+// console.log('switching case'
   switch (command) {
 
     case 'concert-this':
@@ -43,18 +43,21 @@ function getConcert(artist){
       axios.get(queryUrl)
         .then(function (response){
         if(response.data.length > 0){
+            
             for(var i=0; i<response.data.length; i++){
               if (response.data[i]) {
-            console.log(response.data[i].venue.name);
-            console.log(response.data[i].venue.region);
-            var concertDate = moment(response.data[i]).format("MM/DD/YYYY");
-            console.log("Date of the Event :" + concertDate);
+                console.log(artist); 
+                console.log(response.data[i].venue.name);
+                console.log(response.data[i].venue.region);
+                console.log(moment(response.data[i].datetime).format("MM-DD-YYYY hh:mm A"));
+                console.log("\n...........................\n");
           };
           // create the details for the new file log.txt
           var addLog = [
             "name :" + response.data[i].venue.name ? response.data[i].venue.name : '',
             "location: " + response.data[i].venue.region ? response.data[i].venue.region : '',
-            "date: " + moment(response.data[i]).format("MM/DD/YYYY")
+            "date: " + response.data[i].datetime ? response.data[i].datetime : '',
+            "time: " + response.data[i].datetime ? response.data[i].datetime : '',
           ];
         
             fs.appendFileSync("log.txt", JSON.stringify(addLog, null, 2), function(err) {
@@ -83,6 +86,7 @@ function getSong(songName){
       console.log("Song Name: " + data.tracks.items[0].name);
       console.log("Preview: " + data.tracks.items[0].album.external_urls.spotify);
       console.log("Album: " + data.tracks.items[0].album.name);
+      console.log("\n...........................\n");
       }
     
  // create the details for the new file log.txt
@@ -104,6 +108,7 @@ function getSong(songName){
         });
 })
 }
+// 'movie-this'
 function getMovie(movieName){
   if(movieName === undefined){
     movieName = "Mr. Nobody";
@@ -111,11 +116,7 @@ function getMovie(movieName){
   var URL = "http://www.omdbapi.com/?t="+ movieName + "=&plot=short&apikey=trilogy";
   axios.get(URL).then(function(response) {
     console.log(response.data);
-
-    //{ Response: 'False', Error: 'Movie not found!' }
-    //check for response false
-
-    //only output below if response is not false
+    
     // Then we print out the imdbRating
     console.log("Title: " + response.data.Title);
     console.log("Year: " + response.data.Year);
@@ -126,7 +127,7 @@ function getMovie(movieName){
     console.log("Plot: " + response.data.Plot);
     console.log("Actors: " + response.data.Actors);
     console.log("\n---------------------------------------------------\n");
-  
+      
   // create the details for the new file log.txt
         var addLog = [
                 "Title: " + response.data.Title,
@@ -145,8 +146,9 @@ function getMovie(movieName){
           console.log("movie-this added!.");
          }
       });
+      
     });
-    }
+}
     // do-what-it-says
 function getIt(){
   fs.readFileSync('random.txt', "utf8", function(error, data){
