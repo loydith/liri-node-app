@@ -1,18 +1,3 @@
-1. One
-2. Two
-3. Three
-
-Sometimes you want bullet points:
-
-* Start a line with a star
-* Profit!
-
-Alternatively,
-
-- Dashes work just as well
-- And if you have sub points, put two spaces before the dash or star:
-  - Like this
-  - And this
 
 # liri-node-app
 
@@ -32,6 +17,7 @@ LIRI can search Spotify for songs, Bands in Town for concerts, and OMDB for movi
 {node_modules
 .DS_Store
 .env}
+
 3. I created a JavaScript file named keys.js. inside I put his code with the Spotify ID:
 
 console.log('this is loaded');
@@ -43,9 +29,7 @@ exports.spotify = {
 
 4. Next, I created a file named .env, then put this code that it will replace the values with my API keys (no quotes):
 
-
-# Spotify API keys
-
+Spotify API keys
 SPOTIFY_ID=your-spotify-id
 SPOTIFY_SECRET=your-spotify-secret
 
@@ -57,15 +41,13 @@ This file will be used by the dotenv package to set what are known as environmen
 
 Inside of random.txt put the following in with no extra characters or white space:
 
-
 spotify-this-song,"I Want it That Way"
-
 
 6. I created a JavaScript file named liri.js.
 At the top of the liri.js file, added code to read and set any environment variables with the dotenv package:
 
+*require("dotenv").config();
 
-require("dotenv").config();
 
 Add the code required to import the keys.js file and store it in a variable.
 
@@ -85,9 +67,9 @@ Add the code required to import the keys.js file and store it in a variable.
 7. Node-Spotify-API ==> Function getArtist(artist)
 
 	7.1 Axios ==> "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
-		[ * Name of the venue,
-			* Venue location,
-			* Date of the Event (use moment to format this as "MM/DD/YYYY")]
+		* Name of the venue,
+		* Venue location,
+		* Date of the Event (use moment to format this as "MM/DD/YYYY")
 
 	7.2 www.moment.com ==> moment().format("MM/DD/YYYY")
 	7.3 fs.appendFileSync ==> log.txt
@@ -95,24 +77,24 @@ Add the code required to import the keys.js file and store it in a variable.
 8. Spotify-this-song ==> Function getSong(songName)
 	
 	8.1 spotify.search
-		[Artist(s),
-			The song's name,
-			A preview link of the song from Spotify,
-			The album that the song is from]
+		* Artist(s),
+		* The song's name,
+		* A preview link of the song from Spotify,
+		* The album that the song is from
 	
 	8.2 fs.appendFileSync ==> ("log.txt")
 
 9. Movie-this ==> function getMovie(movieName){
    
  	9.1 URL = "http://www.omdbapi.com/?t="+ movieName + "=&plot=short&apikey=trilogy";
-		[  * Title of the movie.
+		* Title of the movie.
    		* Year the movie came out.
-  		 * IMDB Rating of the movie.
-  		 * Rotten Tomatoes Rating of the movie.
-  		 * Country where the movie was produced.
+  		* IMDB Rating of the movie.
+  		* Rotten Tomatoes Rating of the movie.
+  		* Country where the movie was produced.
    		* Language of the movie.
    		* Plot of the movie.
-   		* Actors in the movie.]
+   		* Actors in the movie.
 
 	9.2 fs.appendFileSync ==> log.txt
 
