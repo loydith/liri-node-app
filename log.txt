@@ -1,8 +1,178 @@
 [
-  "Artist:Luis Fonsi",
-  "sngName:Despacito - Remix",
-  "preview:https://open.spotify.com/album/3Gq2Dme9nesdgoqNNlcN8O",
-  "album: Despacito Feat. Justin Bieber (Remix)"
+  "Auditorio Nacional",
+  "",
+  "2019-05-23T20:30:00",
+  "2019-05-23T20:30:00"
+][
+  "Auditorio Nacional",
+  "",
+  "2019-05-25T20:00:00",
+  "2019-05-25T20:00:00"
+][
+  "Auditorio Telmex",
+  "",
+  "2019-05-29T21:00:00",
+  "2019-05-29T21:00:00"
+][
+  "Auditorio Telmex",
+  "",
+  "2019-05-30T21:00:00",
+  "2019-05-30T21:00:00"
+][
+  "Plaza de Toros Santa María",
+  "",
+  "2019-05-31T20:30:00",
+  "2019-05-31T20:30:00"
+][
+  "Estadio de Beisbol Francisco Villa",
+  "",
+  "2019-06-01T20:30:00",
+  "2019-06-01T20:30:00"
+][
+  "Coliseo Centenario",
+  "",
+  "2019-06-06T20:30:00",
+  "2019-06-06T20:30:00"
+][
+  "Auditorio Citibanamex",
+  "",
+  "2019-06-07T21:00:00",
+  "2019-06-07T21:00:00"
+][
+  "Altice Arena",
+  "",
+  "2019-06-21T19:00:00",
+  "2019-06-21T19:00:00"
+][
+  "Papp Laszlo Arena",
+  "",
+  "2019-06-23T19:00:00",
+  "2019-06-23T19:00:00"
+][
+  "Arena Fiera",
+  "",
+  "2019-07-01T00:00:00",
+  "2019-07-01T00:00:00"
+][
+  "Sports hall \"Arena Armeec\"",
+  "",
+  "2019-07-10T20:00:00",
+  "2019-07-10T20:00:00"
+][
+  "Starlite - La Cantera de Marbella",
+  "",
+  "2019-07-13T21:00:00",
+  "2019-07-13T21:00:00"
+][
+  "Pechanga Arena San Diego",
+  "CA",
+  "2019-09-06T03:30:00",
+  "2019-09-06T03:30:00"
+][
+  "The Forum",
+  "CA",
+  "2019-09-07T20:00:00",
+  "2019-09-07T20:00:00"
+][
+  "The Forum",
+  "CA",
+  "2019-09-08T20:00:00",
+  "2019-09-08T20:00:00"
+][
+  "CenturyLink Field",
+  "WA",
+  "2019-09-12T20:00:00",
+  "2019-09-12T20:00:00"
+][
+  "Mandalay Bay Events Center",
+  "NV",
+  "2019-09-14T21:00:00",
+  "2019-09-14T21:00:00"
+][
+  "SAP Center At San Jose",
+  "CA",
+  "2019-09-15T19:00:00",
+  "2019-09-15T19:00:00"
+][
+  "Sames Auto Arena",
+  "TX",
+  "2019-09-19T20:00:00",
+  "2019-09-19T20:00:00"
+][
+  "Talking Stick Resort Arena",
+  "AZ",
+  "2019-09-21T20:00:00",
+  "2019-09-21T20:00:00"
+][
+  "Don Haskins Center",
+  "TX",
+  "2019-09-22T19:00:00",
+  "2019-09-22T19:00:00"
+][
+  "Bert Ogden Arena",
+  "TX",
+  "2019-09-26T20:00:00",
+  "2019-09-26T20:00:00"
+][
+  "Toyota Center",
+  "TX",
+  "2019-09-27T19:30:00",
+  "2019-09-27T19:30:00"
+][
+  "AT&T Center",
+  "TX",
+  "2019-09-28T20:00:00",
+  "2019-09-28T20:00:00"
+][
+  "American Airlines Center",
+  "TX",
+  "2019-09-29T19:30:00",
+  "2019-09-29T19:30:00"
+][
+  "Agganis Arena",
+  "MA",
+  "2019-10-03T20:00:00",
+  "2019-10-03T20:00:00"
+][
+  "Madison Square Garden",
+  "NY",
+  "2019-10-04T20:00:00",
+  "2019-10-04T20:00:00"
+][
+  "CAA Centre",
+  "",
+  "2019-10-06T19:00:00",
+  "2019-10-06T19:00:00"
+][
+  "Amway Center",
+  "FL",
+  "2019-10-10T20:00:00",
+  "2019-10-10T20:00:00"
+][
+  "AmericanAirlines Arena",
+  "FL",
+  "2019-10-11T20:00:00",
+  "2019-10-11T20:00:00"
+][
+  "EagleBank Arena",
+  "VA",
+  "2019-10-13T19:00:00",
+  "2019-10-13T19:00:00"
+][
+  "Allstate Arena",
+  "IL",
+  "2019-10-18T20:00:00",
+  "2019-10-18T20:00:00"
+][
+  "Pepsi Center",
+  "CO",
+  "2019-10-20T19:30:00",
+  "2019-10-20T19:30:00"
+][
+  "Coliseo de Puerto Rico Josu00e9 M. Agrelot",
+  "",
+  "2019-11-09T20:30:00",
+  "2019-11-09T20:30:00"
 ][
   "Title: The Avengers",
   "Year: 2012",
@@ -12,6 +182,20 @@
   "Language: English, Russian, Hindi",
   "plot :Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
   "actors: Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth"
+][
+  "Title: The Avengers",
+  "Year: 2012",
+  "imdbRating: 8.1",
+  "NA",
+  "countryProduced: USA",
+  "Language: English, Russian, Hindi",
+  "plot :Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+  "actors: Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth"
+][
+  "Artist:Luis Fonsi",
+  "sngName:Despacito - Remix",
+  "preview:https://open.spotify.com/album/3Gq2Dme9nesdgoqNNlcN8O",
+  "album: Despacito Feat. Justin Bieber (Remix)"
 ][
   "Auditorio Nacional",
   "",
